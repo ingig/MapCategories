@@ -1,0 +1,15 @@
+MapMain
+- get path of all .csv in data folder, write to %paths%
+- set var %sql% = ''
+- foreach %paths%, call !Process item=%path%
+- write %sql% to sql/update.sql
+
+Process
+- read file %path%, write to %content%
+- [code] split on new line in %content%(string), skip first line, write to %lines%
+- foreach %lines%, call AppendSql item=%line%
+
+AppendSql
+- if %line% is not empty
+    - [code] split %line%(string) on ';', write to %columns%
+    - append to var %sql%, "UPDATE products SET main_category_id=%columns[2]% WHERE id=%columns[1]%\n"

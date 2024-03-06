@@ -1,0 +1,22 @@
+MapCategory
+- read file llm/mapcategory.txt, write to %system%
+- read csv file data/data.csv, delimiter=;, write %products%
+- [code] split %products% into multiple list, each with 200 rows
+    write to %splitProducts%
+- foreach %splitProducts%, call !Process item=%items%, position=%splitPos%
+
+Process
+- [code] check if file 'data/%splitPos%.csv' exists, write to %exists%(bool)
+- if %exists% is false, then ProcessItem
+
+
+ProcessItem
+- write out 'doing nr %splitPos% of %listCount%'
+- [llm] system: %system%
+        user:%items%
+        scheme: 'product_id;main_category_id'
+        respones type: csv
+        model:'gpt-4-0125-preview'
+        write to %mapping%
+- write out 'Writing %splitPos% to file'
+- write %mapping% to file data/%splitPos%.csv, delimiter=; include header

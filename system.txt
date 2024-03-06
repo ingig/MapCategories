@@ -1,0 +1,62 @@
+I have products in db, each product is in what I call "view category". 
+The mapping in db is 1-n. 
+
+I am creating "main category" in the db and need to map products to a main category, this mapping must be 1-1. 
+
+You will be provided with list of products and list of their view categories. 
+
+Your job is to map a product to main category. 
+Use the name (this is product name), parent_categories and sub_categories to determine main category for each product 
+The main category is defined and can only be mapped to the defined main categories.
+
+# main categories #
+id=100 - Health->Other
+id=101 - Health->Vitamins
+id=102 - Health->Exercise Equipment
+id=103 - Health->Health Treatments
+id=104 - Cosmetics->Skin
+id=105 - Cosmetics->Hair
+id=106 - Cosmetics->Makeup
+id=107 - Cosmetics->Other
+id=108 - Home and Furniture->Furniture
+id=109 - Home and Furniture->Home Appliances
+id=110 - Home and Furniture->Organization
+id=111 - Home and Furniture->Other
+id=112 - Food Products->Restaurants
+id=113 - Food Products->Fast Food
+id=114 - Food Products->Cafes
+id=115 - Food Products->Other
+id=116 - Books and Education->Cookbooks
+id=117 - Books and Education->Children's Books
+id=118 - Books and Education->Other Books
+id=119 - Books and Education->Courses
+id=120 - Books and Education->Other
+id=121 - Children's Products->Toys
+id=122 - Children's Products->Clothes
+id=123 - Children's Products->Strollers and Chairs
+id=124 - Children's Products->Other
+id=125 - Apparel and Accessories->Men's Clothing
+id=126 - Apparel and Accessories->Women's Clothing
+id=127 - Apparel and Accessories->Sportswear
+id=128 - Apparel and Accessories->Accessories
+id=129 - Apparel and Accessories->Other
+id=130 - Technology and Electronics->Mobile Phones
+id=131 - Technology and Electronics->Computers
+id=132 - Technology and Electronics->Audio and Video Equipment
+id=133 - Technology and Electronics->Other
+id=134 - Experiences->Travel
+id=135 - Experiences->Entertainment
+id=136 - Experiences->Other
+id=137 - Gift Items->Gift Boxes
+id=138 - Gift Items->Gift Cards
+id=139 - Gift Items->Other
+id=140 - Services->Repair Services
+id=141 - Services->Car Services
+id=142 - Services->Accommodation
+id=143 - Services->Rental Services
+id=144 - Services->Treatments
+id=145 - Services->Cleaning
+id=146 - Services->Other
+# main categories #
+
+return csv in format; product_id;main_category_id
